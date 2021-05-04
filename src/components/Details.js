@@ -9,7 +9,7 @@ const Details = (props) => {
   const movieId = props.info.find((x) => x.id === parseInt(id));
 
   const [video, setVideo] = useState(null);
-  // const [streaming, setStreaming] = useState(null);
+  const [streaming, setStreaming] = useState(null);
 
   useEffect(() => {
     axios
@@ -17,11 +17,14 @@ const Details = (props) => {
         `https://api.themoviedb.org/3/movie/${id}/videos?api_key=a3de086266723f37ed7fb28d7fa9ae25&language=en-US`
       )
       .then((res) => setVideo(res.data.results));
-    // axios
-    //   .get(
-    //     `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=a3de086266723f37ed7fb28d7fa9ae25`
-    //   )
-    //   .then((res) => setStreaming(res.data.results.US));
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=a3de086266723f37ed7fb28d7fa9ae25`
+      )
+      .then((res) => setStreaming(res.data.results.US.flatrate[0]))
+      .catch(error => {
+        console.log(error);
+      });
   }, [id]);
 
   let allGenreNames = [];
@@ -67,19 +70,19 @@ const Details = (props) => {
               )}
             </div>
           </div>
-          {/* <div className="streaming">
-            {streaming && (
+          <div className="streaming">
+            {streaming ? (
               <div>
                 <h2>Available On</h2>
                 <a href={streaming.link} rel="noreferrer" target="_blank">
                   <img
-                    src={getImage(streaming.flatrate[0].logo_path)}
-                    alt={streaming.flatrate[0].provider_name}
+                    src={getImage(streaming.logo_path)}
+                    alt={streaming.provider_name}
                   />
                 </a>
               </div>
-            )}
-          </div> */}
+            ) : <h2>Streaming not available yet</h2>}
+          </div>
         </div>
       </div>
     </section>
