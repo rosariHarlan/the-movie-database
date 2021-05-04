@@ -1,0 +1,299 @@
+.grid-item:hover {
+    position: relative;
+    top: 1px;
+    left: 1px;
+    box-shadow: none;
+  }
+  .grid-item {
+    box-shadow: 0 8px 8px -2px var(--nearlyBlackColor);
+    margin: 1rem;
+  }
+  
+  .popular {
+    color: var(--whiteColor);
+    text-align: center;
+    img {
+      width: 70%;
+      height: auto;
+    }
+    p {
+      &:nth-child(2) {
+        text-align: left;
+        margin-left: 3em;
+        margin-top: 0.3em;
+        width: 73.5%;
+      }
+    }
+    h2 {
+      text-align: left;
+      margin-left: 2.5em;
+      margin-bottom: 0.5em;
+      font-size: 1.2em;
+      width: 82%;
+    }
+    h1 {
+      margin-top: 0.2em;
+    }
+  }
+  
+  .vote-container {
+    position: relative;
+    .vote {
+      background-color: var(--mainColour);
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      padding-top: 10px;
+      font-size: 14px;
+      position: absolute;
+      left: 14em;
+      top: 1em;
+    }
+  }
+  
+  .genre {
+    display: inline;
+  }
+  
+  .error {
+    margin: 2em 0 0 0.5em;
+    img {
+      width: 90%;
+    }
+    a {
+      text-decoration: underline;
+    }
+    h2 {
+      text-align: inline-block;
+      margin: 1em 1em 0;
+    }
+  }
+  
+  @media (min-width: 375px) and (max-width: 400px) {
+    .vote-container {
+      .vote {
+        left: 17em;
+      }
+    }
+    .popular {
+      p {
+        &:nth-child(2) {
+          margin-left: 3.5em;
+        }
+      }
+      h2 {
+        margin-left: 3em;
+      }
+    }
+    .error {
+      h2 {
+        margin-left: 1em;
+      }
+    }
+  }
+  
+  @media (min-width: 414px) and (max-width: 480px) {
+    .vote-container {
+      .vote {
+        left: 20em;
+      }
+    }
+    .popular {
+      p {
+        &:nth-child(2) {
+          margin-left: 4em;
+        }
+      }
+      h2 {
+        margin-left: 3.3em;
+      }
+    }
+    .error {
+      h2 {
+        margin-left: 1em;
+      }
+    }
+  }
+  
+  @media (min-width: 481px) and (max-width: 768px) {
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      grid-template-rows: repeat(3, auto);
+    }
+    .grid-item {
+      align-items: center;
+    }
+    .popular {
+      img {
+        width: 80%;
+        height: auto;
+      }
+      h1 {
+        text-align: left;
+        margin-left: 1em;
+      }
+      p {
+        &:nth-child(2) {
+          margin-left: 1.7em;
+        }
+      }
+      h2 {
+        text-align: left;
+        margin-left: 1.5em;
+      }
+    }
+    .vote-container {
+      .vote {
+        left: 11em;
+      }
+    }
+    .error {
+      h2 {
+        text-align: block;
+        margin-left: 3.8em;
+      }
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      grid-template-rows: repeat(3, auto);
+    }
+    .grid-item {
+      align-self: center;
+    }
+    .popular {
+      img {
+        width: 80%;
+        height: auto;
+      }
+      h1 {
+        text-align: left;
+        margin-left: 1.2em;
+      }
+      p {
+        &:nth-child(2) {
+          margin-left: 2.3em;
+        }
+      }
+      h2 {
+        margin-left: 1.9em;
+      }
+    }
+    .vote-container {
+      .vote {
+        left: 16em;
+      }
+    }
+    .error {
+      img {
+        width: 80%;
+        height: auto;
+      }
+      h2 {
+        font-size: 1.5em;
+        margin-left: 4em;
+      }
+    }
+  }
+  
+  @media (min-width: 1025px) and (max-width: 1200px) {
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(5, auto);
+      grid-template-rows: repeat(3, auto);
+    }
+    .grid-item {
+      align-items: center;
+    }
+    .popular {
+      img {
+        width: 85%;
+        height: auto;
+      }
+      h1 {
+        text-align: left;
+        margin-left: 0.6em;
+      }
+      p {
+        &:nth-child(2) {
+          margin-left: 1em;
+          width: 80%;
+        }
+      }
+      h2 {
+        margin-left: 1em;
+      }
+    }
+    .vote-container {
+      .vote {
+        left: 10em;
+        top: 0.7em;
+      }
+    }
+    .error {
+      width: 100%;
+      margin-top: 5em;
+      margin-left: 5em;
+      img {
+        width: 70%;
+        height: auto;
+      }
+      h2 {
+        text-align: center;
+        font-size: 1.5em;
+        width: 100%;
+      }
+    }
+  }
+  
+  @media (min-width: 1201px) {
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      justify-content: center;
+    }
+    .popular {
+      img {
+        width: 250px;
+        height: auto;
+      }
+      h1 {
+        text-align: left;
+        margin: 0.5em 0 0.5em 2.7em;
+      }
+      p {
+        &:nth-child(2) {
+          margin-left: 1.3em;
+          width: 80%;
+        }
+      }
+      h2 {
+        margin-left: 1.3em;
+      }
+    }
+    .vote-container {
+      .vote {
+        left: 15.5em;
+      }
+    }
+    .grid-item {
+      width: 300px;
+    }
+    .error {
+      margin-top: 2em;
+      img {
+        width: 70%;
+        height: auto;
+      }
+      h2 {
+        text-align: center;
+        font-size: 1.5em;
+        width: 100%;
+      }
+    }
+  }
+  

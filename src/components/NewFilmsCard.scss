@@ -1,0 +1,194 @@
+.newItem {
+    width: 90vw;
+    margin: 1rem;
+    border-bottom: 1px solid var(--mainColour);
+    background: var(--darkGreyColor);
+    .upperContent {
+      padding-left: 1rem;
+    }
+    p {
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .imgCont {
+      display: flex;
+      justify-content: center;
+      min-height: 250px;
+      margin-bottom: 1rem;
+      img {
+        width: 90%;
+      }
+    }
+  
+    input {
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+    }
+    .accordion {
+      .description {
+        margin-bottom: 1rem;
+        width: 100%;
+        color: white;
+        overflow: hidden;
+        box-shadow: 0 8px 8px -2px var(--nearlyBlackColor);
+        border-radius: 10px;
+        &:hover {
+          position: relative;
+          top: 1px;
+          left: 1px;
+          box-shadow: 0 4px 4px -2px var(--nearlyBlackColor);
+        }
+        &-label {
+          display: flex;
+          justify-content: space-between;
+          padding: 1rem;
+          font-weight: bold;
+          cursor: pointer;
+          border-radius: 10px;
+  
+          /* Icon */
+          &::after {
+            content: "\276F";
+            width: 1em;
+            height: 1em;
+            text-align: center;
+            transition: all 0.35s;
+          }
+          &:hover {
+            color: var(--mainColour);
+          }
+        }
+        &-content {
+          max-height: 0;
+          padding: 0 1em;
+          background: var(--lightGreyColor);
+          transition: all 0.35s;
+        }
+        &-close {
+          display: flex;
+          justify-content: flex-end;
+          padding: 1em;
+          font-size: 0.75em;
+          background: var(--lightGreyColor);
+          cursor: pointer;
+          &:hover {
+            background: var(--lightGreyColor);
+          }
+        }
+        // :checked
+        input:checked {
+          + .description-label {
+            background: var(--lightGreyColor);
+            &::after {
+              transform: rotate(90deg);
+              color: var(--mainColour);
+            }
+          }
+          ~ .description-content {
+            max-height: 100vh;
+            padding: 1em;
+          }
+        }
+      }
+      .descrLink {
+        font-size: 12px;
+        color: var(--mainColour);
+      }
+      .descrLink:hover {
+        text-decoration: underline;
+      }
+    }
+    .vote {
+      font-size: 14px;
+      left: 17.5em;
+      top: 1em;
+      position: relative;
+      text-align: center;
+    }
+  }
+  
+  @media (min-width: 375px) and (max-width: 400px) {
+    .newItem {
+      .vote {
+        left: 20.8em;
+      }
+    }
+  }
+  
+  @media (min-width: 414px) and (max-width: 480px) {
+    .newItem {
+      .vote {
+        left: 23em;
+      }
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .newItem {
+      display: grid;
+      width: 30%;
+      min-height: 320px;
+      height: fit-content;
+      margin: 1rem, 0.3rem;
+      justify-content: baseline;
+      border-bottom: none;
+      box-shadow: 0 6px 6px -2px var(--nearlyBlackColor);
+      .imgCont {
+        display: flex;
+        justify-content: center;
+        img {
+          max-height: 250px;
+          width: auto;
+        }
+      }
+      .upperContent {
+        width: 80%;
+        margin: 0.3rem auto;
+        p {
+          font-size: 12px;
+        }
+      }
+      .accordion {
+        width: 80%;
+        margin: 0.3rem auto;
+        .description-label {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  
+  @media (min-width: 481px) and (max-width: 768px) {
+    .newItem {
+      .vote {
+        left: 12em;
+      }
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .newItem {
+      .vote {
+        left: 18em;
+      }
+    }
+  }
+  
+  @media (min-width: 1025px) and (max-width: 1200px) {
+    .newItem {
+      .vote {
+        left: 21em;
+      }
+    }
+  }
+  
+  @media (min-width: 1201px) {
+    .newItem {
+      .vote {
+        left: 25em;
+        top: 1.5em;
+      }
+    }
+  }
+  

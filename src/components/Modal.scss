@@ -1,0 +1,47 @@
+.modalBg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.589);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .modalBox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+  
+      .modalContent {
+        width: 300px;
+        height: 300px;
+        background: var(--lightGreyColor);
+        color: var(--whiteColor);
+      }
+      .modalBody {
+        padding: 10px;
+        margin: 2rem;
+        text-align: center;
+      }
+      .modalButtons {
+        color: black;
+        display: flex;
+        justify-content: space-evenly;
+        height: 50%;
+  
+        .submit {
+          padding: 0.3rem;
+          text-align: center;
+          width: 100px;
+          height: 50px;
+          margin: 0px;
+          &:hover {
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+  
